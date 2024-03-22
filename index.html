@@ -4,19 +4,128 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Salsa - My hobby 💃🏻</title>
-     
+     <style>
+      body {
+            background: rgb(241, 146, 241);
+      }
+
+      h1 {
+            text-align: center;
+      }
+
+      h2 {
+            text-align: center;
+      }
+
+      p {
+            font-size: 18px;
+            line-height: 1.5;
+      }
+      img {
+            max-width: 100%;
+      }
+
+      button {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid rgb(241, 146, 241);
+            background: white;
+            font-size: 20px;
+            border-radius: 6px;
+            padding: 10px 15px;
+            transition: all 150ms ease-in-out;
+      }
+
+      button:hover {
+            background: rgb(241, 146, 241);
+            cursor: pointer;
+      }
+
+      .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+      }
+
+      footer {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 20px;
+      }
+
+      .theme-button {
+          font-size: 16px;
+          background: black;  
+          color: white;
+      }
+
+      .theme-button:hover {
+            color: black;
+            background: white;
+      }
+
+      .salsa-intro-picture {
+            border-radius: 10px;
+            transition: all 150ms ease-in-out;
+      }
+
+      .salsa-intro-picture:hover {
+            filter: contrast(80%);
+            transform: scale(1.1);
+
+      }
+
+      .grid {
+            margin: 15px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 20px;
+      }
+
+      .grid img {
+            width: 100%;
+            border-radius: 8px;
+            transition: all 150ms ease-in-out;
+      }
+
+      .grid img:hover {
+            transform: scale(2);
+      }
+
+      .dark {
+            background: linear-gradient(91.7deg, rgb(50, 25, 79) -4.3%, rgb(122, 101, 149) 101.8%);
+            color: white;
+      }
+
+      .dark .container {
+            background: rgba(255, 255, 255, 0.1);
+      } 
+
+      .dark a {
+            color: rgb(241, 146, 241);
+      }
+
+     </style>
 </head>
 <body>
-      <button>Dark theme</button>
-      <h1>Salsa</h1>
-      <h2>My favorite hobby</h2>
-      <a href="https://en.wikipedia.org/wiki/Salsa_(dance)" target="_blank"></a>
+      <button class="theme-button">Change theme</button>
+      <div class="container">
+      <h1>💃🏻 What is Salsa?</h1>
+      <h2>The best type of dance</h2>
+     
 
-<img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/120/002/original/preillumination-seth-cNlQpTstCK8-unsplash.jpg?1710959353" alt="">
+<img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/120/091/original/Latin-dancers_%281%29.jpg?1711025301" alt="" class="salsa-intro-picture">
+<div class="grid">
+<img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/120/093/original/salsa-dance.jpeg?1711025494" alt="">
+
+
+<img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/120/170/original/salsa.jpg?1711049665"
+      alt="">
 <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/120/004/original/preillumination-seth-i90HGt3WNoE-unsplash.jpg?1710959440" alt="">      
-<img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/120/001/original/Salsa_-_4.jpg?1710959327" alt="">
 <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/120/000/original/salsa-dancers-AdobeStock_227971393-scaled.jpeg?1710959320" alt="">
-<img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/120/007/original/images.jpeg?1710960176" alt="">
+</div>
 </p>
             Salsa is one of the most popular types Latin dances that is practiced worldwide. The term "salsa" was coined by
             Johnny Pacheco in the 1960s in New York, as an umbrella term for Cuban dance music being played in the city at the
@@ -27,12 +136,30 @@
             radio is responsible for American artists to begin incorporating elements of Latin American rhythms into their own music
             and eventually into their own styles of dance.
             
-            As salsa music spread to other countries, different styles emerged such as Cuban and Colombian salsa. Salsa remains
-            popular globally with enthnographic research into salsa having been done as far as Benin, and Ghana.
+     <br /><br />
+     📖
+      <a href="https://en.wikipedia.org/wiki/Salsa_(dance)" target="_blank">
+            <strong>Read on Wikipedia</strong>
+      </a>
       </p>
-      <button>Learn Salsa</button>
+     
+      </div>
       <footer>
-            Coded with 💙 by Galina Borsak
+            Coded with 💙 by <a href="https://github.com/HalinaB916">Galina Borsak</a>
       </footer>
+      <script>
+            function changeTheme() {
+                 let body = document.querySelector("body");
+
+                if (body.classList.contains("dark")) {
+                  body.classList.remove("dark");
+            } else {
+                  body.classList.add("dark");
+            }
+
+            }
+            let themeButton = document.querySelector(".theme-button");
+            themeButton.addEventListener("click", changeTheme);
+      </script>
 </body>
 </html>
